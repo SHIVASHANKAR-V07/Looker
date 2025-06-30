@@ -1,0 +1,328 @@
+#navbar img {
+    width: 35px;
+    height: 35px;
+    margin-top: 6px;
+    margin-left: 15px;
+}
+#navbar {
+    background-color: #4f46e5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    transition: top 0.3s;
+}
+#navbar a {
+    font-family: Georgia;
+    color: white;
+    float: right;
+    text-align: justify;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+#navbar a:hover {
+    background-color: white;
+    color: #4f46e5;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px gainsboro; 
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #4f46e5; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4f46e5; 
+}
+.slogan {
+    font-family: Brush Script MT;
+    color: #4f46e5;
+    margin-top: 75px;
+    margin-left: 375px;
+    margin-bottom: 25px;
+    height: 50px;
+}
+.slogan h1 {
+      font-size: 50px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #4f46e5;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 0.7s step-end infinite;
+}
+@keyframes typing {
+    from{ width: 0;}
+    to{ width: 24ch;}
+}
+@keyframes blink-caret {
+    from, to{border-color: transparent;}
+    50%{border-color: #4f46e5;}
+}
+#home {
+    padding: 25px 25px 25px 25px;
+    box-sizing: border-box;
+}
+#home #vid {
+    width: 100%;
+    border-radius: 50px;
+    height: 450px;
+    display: block;
+    object-fit: cover;
+}
+#features {
+    padding: 25px 25px 25px 90px;
+    border-radius: 25px;
+    overflow: auto;
+    background-color: #4f46e5;
+}
+#features img {
+    width: 33%;
+    float: left;
+    border-radius: 50px;
+}
+#gv {
+    float: right;
+    width: 60%;    
+}
+#gv h2 {
+    text-align: center;
+    color: white;
+    font-family: Brush Script MT;
+    font-size: 70px;
+    font-weight: bold;
+}
+#gv p {
+    text-align: center;
+    line-height: 0.4;
+    color: white;
+    font-family: Georgia;
+    font-size: 40px;
+}
+#f2 {
+    padding: 25px 90px 25px 25px;
+    border-radius: 25px;
+    overflow: auto;
+    background-color: white;
+}  
+#fd img {
+    width: 33%;
+    float: right;
+    border-radius: 50px;
+}
+#otd {
+    float: left;
+    width: 60%;
+}
+#otd h2 {
+    text-align: center;
+    color: #4f46e5;
+    font-family: Brush Script MT;
+    font-size: 70px;
+    font-weight: bold;
+}
+#otd p {
+    text-align: center;
+    line-height: 0.4;
+    color: #4f46e5;
+    font-family: Georgia;
+    font-size: 40px;
+}
+#f3 {
+    padding: 25px 25px 25px 90px;
+    border-radius: 25px;
+    overflow: auto;
+    background-color: #4f46e5;
+}
+#f3 img {
+    width: 33%;
+    float: left;
+    border-radius: 50px;
+}
+#qp {
+    float: right;
+    width: 60%;    
+}
+#qp h2 {
+    text-align: center;
+    color: white;
+    font-family: Brush Script MT;
+    font-size: 70px;
+    font-weight: bold;
+}
+#qp p {
+    text-align: center;
+    line-height: 0.4;
+    color: white;
+    font-family: Georgia;
+    font-size: 40px;
+}
+#f4 {
+    padding: 25px 90px 25px 25px;
+    border-radius: 25px;
+    overflow: auto;
+    background-color: white;
+}  
+#f4 img {
+    width: 33%;
+    float: right;
+    border-radius: 50px;
+}
+#cs {
+    float: left;
+    width: 60%;
+}
+#cs h2 {
+    text-align: center;
+    color: #4f46e5;
+    font-family: Brush Script MT;
+    font-size: 70px;
+    font-weight: bold;
+}
+#cs p {
+    text-align: center;
+    line-height: 0.4;
+    color: #4f46e5;
+    font-family: Georgia;
+    font-size: 40px;
+}
+#product {
+    background-color: #4f46e5;
+    border-radius: 50px;
+    overflow: auto;
+}
+#product h2 {
+    font-family: Georgia;
+    margin-left: 40%;
+    margin-right: 40%;
+    text-align: center;
+    color: #4f46e5;
+    background-color: white;
+    border-radius: 50px;
+}
+.shirt {
+    width: 100%;
+}
+.shirt div {
+    float: left;
+    width: 100%;
+}
+#bs {
+    width: 600px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #4f46e5;
+    border-radius: 15px;
+}
+#bs img {
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+    margin-left: 135px;
+} 
+#bs h3 {
+    font-family: Georgia;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #4f46e5;
+    color: white;
+} 
+#gh {
+    width: 600px;
+    margin-top: 10px;
+    margin-left: 40px;
+    background-color: #ffffff;
+    border-radius: 15px;
+}    
+#gh img {
+    margin-left: 135px;
+    margin-top: 10px;
+    width: 300px;
+    height: 300px;
+}
+#gh h3 {
+    font-family: Georgia;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: white;
+    color: #4f46e5;
+}
+.pant {
+    width: 100%;
+}
+.pant div {
+    float: left;
+}
+#fp {
+    width: 600px;
+    margin-top: 10px;
+    margin-left: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+#fp img {
+    width: 300px;
+    height: 300px;
+    margin-top: 10px;
+    margin-left: 135px;
+    object-fit: fill;
+}
+#fp h3 {
+    font-family: Georgia;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+    color: #4f46e5;
+}
+#tp {
+    width: 600px;
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: #4f46e5;
+    border-radius: 15px;
+}
+#tp img {
+    margin-left: 135px;
+    margin-top: 10px;
+    width: 300px;
+    height: 300px;
+    padding-right: 100px;    
+}
+#tp h3 {
+    font-family: Georgia;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #4f46e5;
+    color: #ffffff; 
+}
+#contact {
+    margin-top: 10px;
+    width: 100%;
+    height: 125px;
+    background-color: #4f46e5;
+    overflow: auto;
+}
+#phone {
+    color: white;  
+    float: left;  
+    margin-left: 35px; 
+    margin-bottom: 10px;
+    width: 50%;
+}
+#contact img {
+    float: right;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-right: 25px;
+}

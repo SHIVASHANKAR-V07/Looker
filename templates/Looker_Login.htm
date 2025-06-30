@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Page</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/STATIC_LOGO.png') }}">
+  <style>
+    body {
+      background-color: #4f45e6;
+      font-family: Georgia;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    input {
+      display: block;
+      width: 100%;
+      border: solid 2px #4f45e6;
+      border-radius: 5px;
+    }
+    #form label,input {
+      color: #4f45e6;
+    }
+    #login-btn {
+      background-color: white;
+      color: #4f45e6;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    #login-btn:hover {
+      background-color: #4f45e6;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2 style="color: #4f45e6;">Login Form</h2>
+    <form id="form" method="POST" action="/login">
+        <label>Username:</label>
+        <input type="text" name="username" required><br><br>
+        <label>Password:</label>
+        <input type="password" name="password" required><br><br>
+        <input id="login-btn" type="submit" value="Login">
+    </form>
+  </div>
+</body>
+</html>
