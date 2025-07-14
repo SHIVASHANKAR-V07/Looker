@@ -4,8 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formal Pant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/STATIC_LOGO.png') }}">
  <style>
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px gainsboro; 
+      border-radius: 0px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #4f46e5; 
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4f46e5; 
+    }
     body {
       font-family: Georgia;
       text-align: center;
@@ -19,6 +34,7 @@
       margin: auto;
       border: 1px solid #ddd;
       border-radius: 8px;
+      text-align: center;
     }
     .product img {
       max-width: 100%;
@@ -38,7 +54,7 @@
       color:  black;
       margin: 16px 0;
     }
-    .buy-button {
+    .add-to-cart {
       background-color: #4f45e6;
       color: white;
       padding: 12px 24px;
@@ -47,8 +63,10 @@
       border-radius: 5px;
       cursor: pointer;
       text-decoration: none;
-    }
-    .buy-button:hover {
+      display: inline-block;
+      margin-top: 16px;
+    } 
+    .add-to-cart:hover {
       background-color: white;
       color: #4f45e6;
       border-color: solid 5px #4f45e6;
@@ -67,8 +85,8 @@
     <li>Closure-type  Button</li>
     <li>Sizes         32,34,36</li>
     <li>Weight        400 g</li></pre>
-  <div class="price">₹699</div>
-  <a href="{{ url_for('home_page')}}" class="buy-button">Buy Now</a>
+  <div class="price"><s>₹999</s> ₹699</div>
+  <a href="{{ url_for('home_page')}}" class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</a>
  </div>   
 </body>
 </html>
