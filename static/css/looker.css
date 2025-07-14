@@ -1,3 +1,23 @@
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4f46e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+#loader img {
+  width: 120px;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
 #navbar img {
     width: 35px;
     height: 35px;
@@ -15,7 +35,7 @@
 #navbar a {
     font-family: Georgia;
     color: white;
-    float: right;
+    float: inline-end;
     text-align: justify;
     display: block;
     padding: 15px;
@@ -24,6 +44,69 @@
 #navbar a:hover {
     background-color: white;
     color: #4f46e5;
+}
+#profile {
+    background-color: #4f46e5;
+    border: none;
+    border-radius: 40%;
+    color: white;
+    padding: 5px;
+    margin-top: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 30px;
+    float: inline-end;
+}
+#profile:hover {
+    background-color: white;
+    color: #4f46e5;
+}
+
+#cart {
+    background-color: #4f46e5;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+    float: inline-end;
+}
+#cart:hover {
+    background-color: white;
+    color: #4f46e5;
+}
+#profile-menu {
+    display: none;
+    position: absolute; 
+    top: 60px;          
+    right: 20px;
+    background: #ffffff;
+    color: #4f46e5;
+    border: 1px solid #4f46e5;
+    border-radius: 8px;
+    font-family: Georgia;
+    font-size: 10px;
+    z-index: 10000;
+}
+#profile-menu button {
+    padding: 10px;
+    border-style: none;
+    border-radius: 10px;
+    margin: 2.5%;
+    background-color: #4f46e5;
+    color: white;
+    font-family: Georgia;
+}
+#profile-menu button:hover {
+    opacity: 50%;
+}
+#profile-menu p {
+    font-family: Georgia;
+    font-size: 15px;
+    padding: 0% 3% 0% 3%;
 }
 html, body {
   margin: 0;
@@ -48,18 +131,16 @@ html, body {
 .slogan {
     font-family: Brush Script MT;
     color: #4f46e5;
-    margin-top: 75px;
-    margin-left: 375px;
-    margin-bottom: 25px;
+    margin: 5% 25% 0% 25%;
     height: 50px;
 }
 .slogan h1 {
-      font-size: 50px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #4f46e5;
-      width: 0;
-      animation: typing 4s steps(40, end) forwards, blink 0.7s step-end infinite;
+    font-size: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #4f46e5;
+    width: 0;
+    animation: typing 4s steps(40, end) forwards, blink 0.7s step-end infinite;
 }
 @keyframes typing {
     from{ width: 0;}
@@ -198,131 +279,74 @@ html, body {
 }
 #product {
     background-color: #4f46e5;
+    height: auto;
+    padding: 0.002% 0% 0.002% 0%;
     border-radius: 50px;
-    overflow: auto;
 }
 #product h2 {
-    font-family: Georgia;
-    margin-left: 40%;
-    margin-right: 40%;
     text-align: center;
+    display: block;
+    margin-left: 36%;
+    margin-right: 36%;
     color: #4f46e5;
+    font-family: Georgia;
     background-color: white;
     border-radius: 50px;
 }
-.shirt {
-    width: 100%;
+.shirts {
+    display: flex;
 }
-.shirt div {
-    float: left;
-    width: 100%;
+.shirts div {
+    width: 50%;
+    align-items: center;
 }
-#bs {
-    width: 600px;
-    margin-top: 10px;
-    margin-left: 10px;
-    background-color: #4f46e5;
-    border-radius: 15px;
-}
-#bs img {
+.shirts img {
+    border-radius: 50px;
     width: 300px;
     height: 300px;
-    margin-top: 10px;
-    margin-left: 135px;
-} 
-#bs h3 {
-    font-family: Georgia;
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-color: #4f46e5;
+    padding-top: 7px;
+}
+.shirts h2,a {
+    text-decoration: none;
     color: white;
-} 
-#gh {
-    width: 600px;
-    margin-top: 10px;
-    margin-left: 40px;
-    background-color: #ffffff;
-    border-radius: 15px;
-}    
-#gh img {
-    margin-left: 135px;
-    margin-top: 10px;
+    font-family: Georgia;
+}
+.pants {
+    display: flex;
+}
+.pants div {
+    width: 50%;
+    align-items: center;
+}
+.pants img {
+    border-radius: 50px;
     width: 300px;
     height: 300px;
+    padding-top: 7px;
 }
-#gh h3 {
+.pants h2,a {
+    text-decoration: none;
+    color: white;
     font-family: Georgia;
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-color: white;
-    color: #4f46e5;
-}
-.pant {
-    width: 100%;
-}
-.pant div {
-    float: left;
-}
-#fp {
-    width: 600px;
-    margin-top: 10px;
-    margin-left: 30px;
-    background-color: #ffffff;
-    border-radius: 15px;
-}
-#fp img {
-    width: 300px;
-    height: 300px;
-    margin-top: 10px;
-    margin-left: 135px;
-    object-fit: fill;
-}
-#fp h3 {
-    font-family: Georgia;
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-color: #ffffff;
-    color: #4f46e5;
-}
-#tp {
-    width: 600px;
-    margin-top: 10px;
-    margin-left: 20px;
-    background-color: #4f46e5;
-    border-radius: 15px;
-}
-#tp img {
-    margin-left: 135px;
-    margin-top: 10px;
-    width: 300px;
-    height: 300px;
-    padding-right: 100px;    
-}
-#tp h3 {
-    font-family: Georgia;
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-color: #4f46e5;
-    color: #ffffff; 
 }
 #contact {
-    margin-top: 10px;
-    width: 100%;
-    height: 125px;
+    display: flex;
     background-color: #4f46e5;
-    overflow: auto;
+    color: white;
+    font-family: Georgia;
 }
-#phone {
-    color: white;  
-    float: left;  
-    margin-left: 35px; 
-    margin-bottom: 10px;
-    width: 50%;
+#call {
+    width: 92%;
+    height: auto;
+    color: white;
+    font-family: Georgia;
+    padding-left: 5px;
 }
-#contact img {
+#ll {
     float: right;
-    width: 100px;
-    height: 100px;
-    margin-top: 20px;
-    margin-right: 25px;
+}
+#ll img {
+    width: 75px;
+    height: 75px;
+    padding: 10px 0px 0px 10px;
 }
