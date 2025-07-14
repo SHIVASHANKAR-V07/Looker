@@ -5,18 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Looker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/looker.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="{{ url_for('static', filename='js/looker.js') }}"></script>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/STATIC_LOGO.png') }}">
 </head>
 <body>
+<!-- Loader-->
+ <div id="loader">
+    <img src="{{ url_for('static', filename='images/STATIC_LOGO.png') }}" alt="Logo">
+ </div>
 <!-- Navigation/Menu Bar-->   
  <div id="navbar">
      <img src="{{ url_for('static', filename='images/STATIC_LOGO.png') }}">
+     <button id="cart"><i class="fa-solid fa-cart-shopping"></i></button>
+     <button id="profile" onclick="toggleProfile()"><i class="fa-solid fa-circle-user"></i></button>
      <a href="#contact">CONTACT</a>
      <a href="#product">PRODUCT</a>
      <a href="#features">FEATURES</a>
      <a href="#home">HOME</a>
  </div>
+   <div id="profile-menu">
+    {% if session.get('user') %}
+      <p>Welcome, {{ session['user'] }}</p>
+      <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+    {% else %}
+      <a href="{{ url_for('signin') }}"><button>Login</button></a><br>
+      <a href="{{ url_for('signup') }}"><button>Create Account</button></a>
+    {% endif %}
+  </div>
  <div class="slogan">
     <h1>Changing the way you LOOK!</h1>
  </div>
@@ -29,7 +45,7 @@
  <!-- Features Pages-->
  <div id="features">
     <div id="bp">
-     <img src="{{ url_for('static', filename='images/Best_price_icon.png') }}"></img>
+       <img src="{{ url_for('static', filename='images/Best_price_icon.png') }}"></img>
     </div> 
     <div id="gv">
         <h2>" Great-Value "</h2>
@@ -45,13 +61,13 @@
          <p>faster and on-time</p>
     </div>
     <div id="fd">
-      <img src="{{ url_for('static', filename='images/Fast_delivery_icon.png') }}"></img>   
+        <img src="{{ url_for('static', filename='images/Fast_delivery_icon.png') }}"></img>   
     </div>
  </div>
  <!-- Features Pages 3-->
  <div id="f3">
     <div id="pq">
-     <img src="{{ url_for('static', filename='images/Product_quality_icon.png') }}"></img>
+       <img src="{{ url_for('static', filename='images/Product_quality_icon.png') }}"></img>
     </div> 
     <div id="qp">
         <h2>" Quality-Product "</h2>
@@ -71,46 +87,41 @@
     </div>
  </div>
  <!-- Products-->
- <div id="product">
-    <h2>PRODUCTS</h2>
- </div>  
- <div class="shirt"> 
-   <div id="bs">
-     <a href="{{ url_for('blue_shirt')}}">
-       <img src="{{ url_for('static', filename='images/Blue_shirt.jpg') }}">
-       <h3> Blue Men's Casual </h3>
-     </a>
-   </div>
-   <div id="gh">
-     <a href="{{ url_for('grey_hoodie')}}">
-       <img src="{{ url_for('static', filename='images/Grey_hoodie.jpg') }}">
-       <h3> Grey Hoodie</h3>
-     </a>
-   </div> 
- </div>
- <br><br><br><br>
- <div class="pant">
-   <div id="fp">
-     <a href="{{ url_for('formal_pant')}}">
-       <img src="{{ url_for('static', filename='images/Formal_pant.jpg') }}">
-       <h3> Formal Pant  </h3>
-     </a>
-   </div>
-   <div id="tp">  
-     <a href="{{ url_for('track_pant')}}">
-       <img src="{{ url_for('static', filename='images/Track_pant.jpg') }}">
-       <h3> Track Pant </h3>
-     </a>
-   </div>
- </div>
-   <div id="contact">
-    <div id="phone">
-      <p><h2>📞 +91 09876 54321</h2></p>
-      <p><h2>✉️ email@looker.com</h2></p>
+ <div id="product"><h2>PRODUCTS</h2></div>
+ <div class="shirts">
+    <div style="background-color: #4f46e5;color: white; border-radius: 50px;">
+       <center><a href="{{ url_for('blue_shirt') }}">
+       <img src="{{ url_for('static', filename='images/Blue_shirt.jpg') }}"></img>
+       <h2>Blue Shirt</h2></a></center>
     </div>
-    <div id="low_logo">
-      <img src="{{ url_for('static', filename='images/STATIC_LOGO.png') }}">
+    <div style="color: #4f46e5;">
+       <center><a href="{{ url_for('grey_hoodie') }}">
+       <img src="{{ url_for('static', filename='images/Grey_hoodie.jpg') }}"></img>
+       <h2 style="color: #4f46e5;">Grey Hoodie</h2></a></center>
     </div>
-   </div>
+ </div>
+  <div class="pants">
+    <div style="color: #4f46e5; border-radius: 50px;">
+       <center><a href="{{ url_for('formal_pant') }}">
+       <img src="{{ url_for('static', filename='images/Formal_pant.jpg') }}"></img>
+       <h2 style="color: #4f46e5;">Formal Pant</h2></a></center>
+    </div>
+    <div style="background-color: #4f46e5;color: white; border-radius: 50px;">
+       <center><a href="{{ url_for('track_pant') }}">
+       <img src="{{ url_for('static', filename='images/Track_pant.jpg') }}"></img>
+       <h2>Track Pant</h2></a></center>
+    </div>
+ </div>
+ <div id="contact">
+     <div id="call">
+       <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+       <p><i class="fa-solid fa-envelope"></i> looker@gmail.com</p>
+     </div>
+     <div id="ll">
+       <a href="#home">
+        <img src="{{ url_for('static', filename='images/STATIC_LOGO.png') }}"></img>
+       </a> 
+     </div>  
+ </div>
 </body>
 </html>
