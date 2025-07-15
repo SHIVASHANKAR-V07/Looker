@@ -20,3 +20,7 @@ function toggleProfile() {
   const menu = document.getElementById('profile-menu');
   menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
 }
+
+function buyNow() {
+  window.location.href = "/buy_now";
+}
