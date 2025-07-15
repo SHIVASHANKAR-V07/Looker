@@ -54,7 +54,8 @@
       color:  black;
       margin: 16px 0;
     }
-    .add-to-cart {
+    .add-to-cart,
+    .remove_from_cart {
       background-color: #4f45e6;
       color: white;
       padding: 12px 24px;
@@ -67,6 +68,11 @@
       margin-top: 16px;
     } 
     .add-to-cart:hover {
+      background-color: white;
+      color: #4f45e6;
+      border-color: solid 5px #4f45e6;
+    }
+    .remove_from_cart:hover {
       background-color: white;
       color: #4f45e6;
       border-color: solid 5px #4f45e6;
@@ -86,7 +92,14 @@
     <li>Sizes         32,34,36</li>
     <li>Weight        400 g</li></pre>
   <div class="price"><s>₹999</s> ₹699</div>
-  <a href="{{ url_for('home_page')}}" class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</a>
- </div>   
+   <form method="POST" action="{{ url_for('add_to_cart', product_id=3) }}">
+     <label>Quantity:</label>
+     <input type="number" name="quantity" value="1" min="1" max="10"><br>
+     <button type="submit" class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+   </form>
+   <form action="{{ url_for('remove_from_cart', product_id=3) }}" method="POST">
+      <button type="submit" class="remove_from_cart">Remove</button>
+   </form>
+  </div>   
 </body>
 </html>
