@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordered Successfully</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/STATIC_LOGO.png') }}">    
+    <script>
+        function returnHome() {
+            window.location.href="/";
+        }
+    </script>
+ <style>
+    div {
+        background-color: white;
+        padding: 20px;
+        max-width: 400px;
+        margin: auto;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        text-align: center;
+    }
+    button {
+        background-color: #4f45e6;
+        color: white;
+        padding: 12px 24px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 16px;
+    }
+    button:hover {
+        background-color: white;
+        color: #4f45e6;
+        border-color: solid 5px #4f45e6;
+    }
+ </style>  
+</head>
+<body style="background-color: #4f46e5; font-family: Georgia;">
+  <div>
+     <h2>THANK YOU !</h2>
+     <h2>Your Order will be delivered within 15 days.</h2>
+     <br>
+     <button onclick="returnHome()">Return to home</button>
+  </div>
+</body>
+</html>
