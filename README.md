@@ -4,7 +4,8 @@
 
 🌐 ~ [ looker.com ](https://looker-tv1a.onrender.com/)
 
-![Home Video](static/images/Intro_LOOKER.mp4)
+![Looker Logo](static/images/STATIC_LOGO.png)
+*Both logo and intro video was created using Canva*
 
 # Knowledge Gained
 
