@@ -6,6 +6,9 @@
   <title>Signup</title>
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/STATIC_LOGO.png') }}">
   <style>
+   * {
+     box-sizing: border-box;
+   }
    .flash.success {
      color: green;
      font-weight: bold;
@@ -24,7 +27,9 @@
    body {
      text-align: center;
      background-color: #4f46e5;
-     padding: 40px;
+     padding: 40px 20px;
+     margin: 0;
+     font-family: Georgia;
    }
    .form {
      background: white;
@@ -32,13 +37,13 @@
      font-size: 20px;
      padding: 20px;
      max-width: 400px;
+     width: 100%;
      margin: auto;
      border: 1px solid #ddd;
      border-radius: 8px;
      text-align: center;
-     font-family: Georgia;
    }
-   input,button {
+   input, button {
      padding: 10px;
      border-style: none;
      border-radius: 10px;
@@ -47,6 +52,7 @@
      color: white;
      font-size: 15px;
      font-family: Georgia;
+     width: calc(100% - 5%);
    }
    button:hover {
     opacity: 50%;
@@ -60,11 +66,62 @@
    h2 {
      color: #4f46e5;
      font-family: Georgia;
+     margin-top: 0;
    }
    p {
      color: #4f46e5;
      font-family: Georgia;
      font-size: 18px;
+   }
+   a {
+     color: #4f46e5;
+     text-decoration: underline;
+   }
+
+   /* Tablet Styles */
+   @media screen and (max-width: 1024px) {
+     body {
+       padding: 30px 15px;
+     }
+     .form {
+       font-size: 18px;
+     }
+   }
+
+   /* Mobile Styles */
+   @media screen and (max-width: 767px) {
+     body {
+       padding: 20px 10px;
+     }
+     .form {
+       padding: 15px;
+       font-size: 16px;
+     }
+     h2 {
+       font-size: 22px;
+     }
+     p {
+       font-size: 16px;
+     }
+     input, button {
+       font-size: 14px;
+       padding: 12px;
+       margin: 5px 0;
+       width: 100%;
+     }
+     input::placeholder {
+       font-size: 14px;
+     }
+   }
+
+   /* Small Mobile */
+   @media screen and (max-width: 480px) {
+     h2 {
+       font-size: 20px;
+     }
+     p {
+       font-size: 14px;
+     }
    }
   </style>
 <body>

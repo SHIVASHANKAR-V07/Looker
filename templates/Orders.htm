@@ -11,14 +11,32 @@
         }
     </script>
  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #4f46e5; 
+      font-family: Georgia;
+      padding: 40px 20px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
     div {
         background-color: white;
         padding: 20px;
         max-width: 400px;
+        width: 100%;
         margin: auto;
         border: 1px solid #ddd;
         border-radius: 8px;
         text-align: center;
+    }
+    h2 {
+      color: #4f46e5;
+      font-size: 24px;
     }
     button {
         background-color: #4f45e6;
@@ -31,15 +49,51 @@
         text-decoration: none;
         display: inline-block;
         margin-top: 16px;
+        transition: all 0.3s ease;
     }
     button:hover {
         background-color: white;
         color: #4f45e6;
-        border-color: solid 5px #4f45e6;
+        border: 2px solid #4f45e6;
+    }
+
+    /* Tablet Styles */
+    @media screen and (max-width: 1024px) {
+      body {
+        padding: 30px 15px;
+      }
+      div {
+        padding: 18px;
+      }
+    }
+
+    /* Mobile Styles */
+    @media screen and (max-width: 767px) {
+      body {
+        padding: 20px 10px;
+      }
+      div {
+        padding: 15px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+      }
+    }
+
+    /* Small Mobile */
+    @media screen and (max-width: 480px) {
+      h2 {
+        font-size: 18px;
+      }
     }
  </style>  
 </head>
-<body style="background-color: #4f46e5; font-family: Georgia;">
+<body>
   <div>
      <h2>THANK YOU !</h2>
      <h2>Your Order will be delivered within 15 days.</h2>

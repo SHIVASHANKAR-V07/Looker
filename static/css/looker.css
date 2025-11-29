@@ -1,3 +1,4 @@
+/* Loader */
 #loader {
   position: fixed;
   top: 0;
@@ -18,12 +19,8 @@
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.1); opacity: 0.7; }
 }
-#navbar img {
-    width: 35px;
-    height: 35px;
-    margin-top: 6px;
-    margin-left: 15px;
-}
+
+/* Navbar */
 #navbar {
     background-color: #4f46e5;
     position: fixed;
@@ -31,32 +28,55 @@
     width: 100%;
     height: 50px;
     transition: top 0.3s;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-#navbar a {
+#navbar img {
+    width: 35px;
+    height: 35px;
+    margin-left: 15px;
+}
+
+/* Menu Toggle Button (Hamburger) - Hidden on Desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+/* Navigation Links Container */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+.nav-links a {
     font-family: Georgia;
     color: white;
-    float: inline-end;
-    text-align: justify;
-    display: block;
+    text-align: center;
     padding: 15px;
     text-decoration: none;
+    display: inline-block;
 }
-#navbar a:hover {
+.nav-links a:hover {
     background-color: white;
     color: #4f46e5;
 }
+
 #profile {
     background-color: #4f46e5;
     border: none;
     border-radius: 40%;
     color: white;
-    padding: 5px;
-    margin-top: 2px;
+    padding: 5px 10px;
     text-align: center;
-    text-decoration: none;
-    display: block;
     font-size: 30px;
-    float: inline-end;
+    cursor: pointer;
 }
 #profile:hover {
     background-color: white;
@@ -69,15 +89,14 @@
     color: white;
     padding: 10px;
     text-align: center;
-    text-decoration: none;
-    display: block;
     font-size: 25px;
-    float: inline-end;
+    cursor: pointer;
 }
 #cart:hover {
     background-color: white;
     color: #4f46e5;
 }
+
 #profile-menu {
     display: none;
     position: absolute; 
@@ -88,31 +107,39 @@
     border: 1px solid #4f46e5;
     border-radius: 8px;
     font-family: Georgia;
-    font-size: 10px;
     z-index: 10000;
+    padding: 10px;
 }
 #profile-menu button {
-    padding: 10px;
+    padding: 10px 15px;
     border-style: none;
     border-radius: 10px;
-    margin: 2.5%;
+    margin: 5px;
     background-color: #4f46e5;
     color: white;
     font-family: Georgia;
+    cursor: pointer;
+    width: 100%;
 }
 #profile-menu button:hover {
-    opacity: 50%;
+    opacity: 0.7;
 }
 #profile-menu p {
     font-family: Georgia;
     font-size: 15px;
-    padding: 0% 3% 0% 3%;
+    padding: 5px;
+    margin: 5px 0;
 }
+
+/* Base Styles */
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -128,14 +155,18 @@ html, body {
 ::-webkit-scrollbar-thumb:hover {
   background: #4f46e5; 
 }
+
+/* Slogan */
 .slogan {
-    font-family: Brush Script MT;
+    font-family: 'Brush Script MT', cursive;
     color: #4f46e5;
-    margin: 5% 25% 0% 25%;
-    height: 50px;
+    margin: 80px auto 20px;
+    padding: 0 20px;
+    text-align: center;
 }
 .slogan h1 {
     font-size: 50px;
+    display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid #4f46e5;
@@ -143,16 +174,17 @@ html, body {
     animation: typing 4s steps(40, end) forwards, blink 0.7s step-end infinite;
 }
 @keyframes typing {
-    from{ width: 0;}
-    to{ width: 24ch;}
+    from { width: 0; }
+    to { width: 24ch; }
 }
-@keyframes blink-caret {
-    from, to{border-color: transparent;}
-    50%{border-color: #4f46e5;}
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #4f46e5; }
 }
+
+/* Home Video Section */
 #home {
-    padding: 25px 25px 25px 25px;
-    box-sizing: border-box;
+    padding: 25px;
 }
 #home #vid {
     width: 100%;
@@ -161,6 +193,8 @@ html, body {
     display: block;
     object-fit: cover;
 }
+
+/* Features Sections */
 #features {
     padding: 25px 25px 25px 90px;
     border-radius: 25px;
@@ -179,7 +213,7 @@ html, body {
 #gv h2 {
     text-align: center;
     color: white;
-    font-family: Brush Script MT;
+    font-family: 'Brush Script MT', cursive;
     font-size: 70px;
     font-weight: bold;
 }
@@ -190,6 +224,7 @@ html, body {
     font-family: Georgia;
     font-size: 40px;
 }
+
 #f2 {
     padding: 25px 90px 25px 25px;
     border-radius: 25px;
@@ -208,7 +243,7 @@ html, body {
 #otd h2 {
     text-align: center;
     color: #4f46e5;
-    font-family: Brush Script MT;
+    font-family: 'Brush Script MT', cursive;
     font-size: 70px;
     font-weight: bold;
 }
@@ -219,6 +254,7 @@ html, body {
     font-family: Georgia;
     font-size: 40px;
 }
+
 #f3 {
     padding: 25px 25px 25px 90px;
     border-radius: 25px;
@@ -237,7 +273,7 @@ html, body {
 #qp h2 {
     text-align: center;
     color: white;
-    font-family: Brush Script MT;
+    font-family: 'Brush Script MT', cursive;
     font-size: 70px;
     font-weight: bold;
 }
@@ -248,6 +284,7 @@ html, body {
     font-family: Georgia;
     font-size: 40px;
 }
+
 #f4 {
     padding: 25px 90px 25px 25px;
     border-radius: 25px;
@@ -266,7 +303,7 @@ html, body {
 #cs h2 {
     text-align: center;
     color: #4f46e5;
-    font-family: Brush Script MT;
+    font-family: 'Brush Script MT', cursive;
     font-size: 70px;
     font-weight: bold;
 }
@@ -277,76 +314,291 @@ html, body {
     font-family: Georgia;
     font-size: 40px;
 }
+
+/* Products Section */
 #product {
     background-color: #4f46e5;
     height: auto;
-    padding: 0.002% 0% 0.002% 0%;
+    padding: 20px;
     border-radius: 50px;
 }
 #product h2 {
     text-align: center;
     display: block;
-    margin-left: 36%;
-    margin-right: 36%;
+    max-width: 400px;
+    margin: 0 auto 20px;
     color: #4f46e5;
     font-family: Georgia;
     background-color: white;
     border-radius: 50px;
+    padding: 10px;
 }
+
 .shirts {
     display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .shirts div {
-    width: 50%;
+    width: 45%;
+    min-width: 250px;
     align-items: center;
+    text-align: center;
 }
 .shirts img {
     border-radius: 50px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 300px;
+    object-fit: cover;
     padding-top: 7px;
 }
-.shirts h2,a {
+.shirts h2, .shirts a {
     text-decoration: none;
     color: white;
     font-family: Georgia;
 }
+
 .pants {
     display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .pants div {
-    width: 50%;
+    width: 45%;
+    min-width: 250px;
     align-items: center;
+    text-align: center;
 }
 .pants img {
     border-radius: 50px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 300px;
+    object-fit: cover;
     padding-top: 7px;
 }
-.pants h2,a {
+.pants h2, .pants a {
     text-decoration: none;
     color: white;
     font-family: Georgia;
 }
+
+/* Contact Section */
 #contact {
     display: flex;
     background-color: #4f46e5;
     color: white;
     font-family: Georgia;
+    padding: 20px;
+    align-items: center;
 }
 #call {
-    width: 92%;
-    height: auto;
+    flex: 1;
     color: white;
     font-family: Georgia;
-    padding-left: 5px;
-}
-#ll {
-    float: right;
+    padding-left: 20px;
 }
 #ll img {
     width: 75px;
     height: 75px;
-    padding: 10px 0px 0px 10px;
+    padding: 10px;
+}
+
+/* ======================================
+   RESPONSIVE STYLES - TABLET 
+   ====================================== */
+@media screen and (max-width: 1024px) {
+    .slogan h1 {
+        font-size: 40px;
+    }
+    
+    #home #vid {
+        height: 350px;
+    }
+    
+    /* Features */
+    #features, #f2, #f3, #f4 {
+        padding: 20px;
+    }
+    #features img, #f2 img, #f3 img, #f4 img {
+        width: 40%;
+    }
+    #gv, #otd, #qp, #cs {
+        width: 55%;
+    }
+    #gv h2, #otd h2, #qp h2, #cs h2 {
+        font-size: 50px;
+    }
+    #gv p, #otd p, #qp p, #cs p {
+        font-size: 30px;
+    }
+    
+    .shirts div, .pants div {
+        width: 48%;
+    }
+}
+
+/* ======================================
+   RESPONSIVE STYLES - MOBILE 
+   ====================================== */
+@media screen and (max-width: 767px) {
+    /* Navbar Mobile */
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 50px;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: calc(100vh - 50px);
+        background-color: #4f46e5;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: right 0.3s ease;
+        padding-top: 20px;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links a {
+        width: 100%;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    #cart, #profile {
+        width: 100%;
+        text-align: left;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Slogan */
+    .slogan {
+        margin: 70px 10px 10px;
+    }
+    .slogan h1 {
+        font-size: 24px;
+        animation: typing 4s steps(40, end) forwards;
+    }
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    
+    /* Home Video */
+    #home {
+        padding: 15px;
+    }
+    #home #vid {
+        height: 250px;
+        border-radius: 25px;
+    }
+    
+    /* Features - Stack Vertically */
+    #features, #f2, #f3, #f4 {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+    
+    #features img, #f2 img, #f3 img, #f4 img {
+        width: 80%;
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+    }
+    
+    #gv, #otd, #qp, #cs {
+        width: 100%;
+        float: none;
+    }
+    
+    #gv h2, #otd h2, #qp h2, #cs h2 {
+        font-size: 32px;
+    }
+    
+    #gv p, #otd p, #qp p, #cs p {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+    
+    /* Products */
+    #product {
+        padding: 15px;
+        border-radius: 25px;
+    }
+    
+    #product h2 {
+        font-size: 20px;
+        max-width: 200px;
+    }
+    
+    .shirts, .pants {
+        flex-direction: column;
+    }
+    
+    .shirts div, .pants div {
+        width: 100%;
+    }
+    
+    .shirts img, .pants img {
+        max-width: 250px;
+        height: 250px;
+    }
+    
+    /* Contact */
+    #contact {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    #call {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    
+    #call p {
+        font-size: 14px;
+    }
+    
+    #ll img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* ======================================
+   RESPONSIVE STYLES - SMALL MOBILE 
+   ====================================== */
+@media screen and (max-width: 480px) {
+    .slogan h1 {
+        font-size: 20px;
+    }
+    
+    #home #vid {
+        height: 200px;
+    }
+    
+    #gv h2, #otd h2, #qp h2, #cs h2 {
+        font-size: 28px;
+    }
+    
+    #gv p, #otd p, #qp p, #cs p {
+        font-size: 16px;
+    }
+    
+    .shirts img, .pants img {
+        max-width: 200px;
+        height: 200px;
+    }
 }

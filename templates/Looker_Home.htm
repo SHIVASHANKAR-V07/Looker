@@ -14,38 +14,53 @@
  <div id="loader">
     <img src="{{ url_for('static', filename='images/STATIC_LOGO.png') }}" alt="Logo">
  </div>
+ 
 <!-- Navigation/Menu Bar-->   
  <div id="navbar">
-     <img src="{{ url_for('static', filename='images/STATIC_LOGO.png') }}">
-     <button id="cart" onclick="buyNow()"><i class="fa-solid fa-cart-shopping"></i></button></a>
-     <button id="profile" onclick="toggleProfile()"><i class="fa-solid fa-circle-user"></i></button>
-     <a href="#contact">CONTACT</a>
-     <a href="#product">PRODUCT</a>
-     <a href="#features">FEATURES</a>
-     <a href="#home">HOME</a>
+     <img src="{{ url_for('static', filename='images/STATIC_LOGO.png') }}" alt="Looker Logo">
+     
+     <!-- Hamburger Menu Button (Mobile Only) -->
+     <button class="menu-toggle" onclick="toggleMenu()">
+         <i class="fa-solid fa-bars"></i>
+     </button>
+     
+     <!-- Navigation Links -->
+     <div class="nav-links">
+         <a href="#home">HOME</a>
+         <a href="#features">FEATURES</a>
+         <a href="#product">PRODUCT</a>
+         <a href="#contact">CONTACT</a>
+         <button id="profile" onclick="toggleProfile()"><i class="fa-solid fa-circle-user"></i></button>
+         <button id="cart" onclick="buyNow()"><i class="fa-solid fa-cart-shopping"></i></button>
+     </div>
  </div>
-   <div id="profile-menu">
+ 
+ <!-- Profile Menu -->
+ <div id="profile-menu">
     {% if session.get('user') %}
       <p>Welcome, {{ session['user'] }}</p>
       <a href="{{ url_for('logout') }}"><button>Logout</button></a>
     {% else %}
-      <a href="{{ url_for('signin') }}"><button>Login</button></a><br>
+      <a href="{{ url_for('signin') }}"><button>Login</button></a>
       <a href="{{ url_for('signup') }}"><button>Create Account</button></a>
     {% endif %}
-  </div>
+ </div>
+ 
  <div class="slogan">
     <h1>Changing the way you LOOK!</h1>
  </div>
+ 
  <!-- Home Page-->
  <div id="home">
     <video id="vid" autoplay loop muted playsinline>
         <source src="{{ url_for('static', filename='images/Intro_LOOKER.mp4') }}" type="video/mp4">
     </video>
  </div>
+ 
  <!-- Features Pages-->
  <div id="features">
     <div id="bp">
-       <img src="{{ url_for('static', filename='images/Best_price_icon.png') }}"></img>
+       <img src="{{ url_for('static', filename='images/Best_price_icon.png') }}" alt="Best Price">
     </div> 
     <div id="gv">
         <h2>" Great-Value "</h2>
@@ -53,6 +68,7 @@
         <p>hard-earned money</p>
     </div>
  </div>
+ 
  <!-- Features Pages 2-->
  <div id="f2">
     <div id="otd">
@@ -61,13 +77,14 @@
          <p>faster and on-time</p>
     </div>
     <div id="fd">
-        <img src="{{ url_for('static', filename='images/Fast_delivery_icon.png') }}"></img>   
+        <img src="{{ url_for('static', filename='images/Fast_delivery_icon.png') }}" alt="Fast Delivery">
     </div>
  </div>
+ 
  <!-- Features Pages 3-->
  <div id="f3">
     <div id="pq">
-       <img src="{{ url_for('static', filename='images/Product_quality_icon.png') }}"></img>
+       <img src="{{ url_for('static', filename='images/Product_quality_icon.png') }}" alt="Quality Product">
     </div> 
     <div id="qp">
         <h2>" Quality-Product "</h2>
@@ -75,6 +92,7 @@
         <p>better products</p>
     </div>
  </div>
+ 
  <!-- Features Pages 4-->
  <div id="f4">
     <div id="cs">
@@ -83,35 +101,38 @@
          <p>effective help</p>
     </div>
     <div id="as">
-      <img src="{{ url_for('static', filename='images/Customer_support_icon.png') }}"></img>   
+      <img src="{{ url_for('static', filename='images/Customer_support_icon.png') }}" alt="Customer Support">
     </div>
  </div>
+ 
  <!-- Products-->
  <div id="product"><h2>PRODUCTS</h2></div>
  <div class="shirts">
     <div style="background-color: #4f46e5;color: white; border-radius: 50px;">
        <center><a href="{{ url_for('blue_shirt') }}">
-       <img src="{{ url_for('static', filename='images/Blue_shirt.jpg') }}"></img>
+       <img src="{{ url_for('static', filename='images/Blue_shirt.jpg') }}" alt="Blue Shirt">
        <h2>Blue Shirt</h2></a></center>
     </div>
     <div style="color: #4f46e5;">
        <center><a href="{{ url_for('grey_hoodie') }}">
-       <img src="{{ url_for('static', filename='images/Grey_hoodie.jpg') }}"></img>
+       <img src="{{ url_for('static', filename='images/Grey_hoodie.jpg') }}" alt="Grey Hoodie">
        <h2 style="color: #4f46e5;">Grey Hoodie</h2></a></center>
     </div>
  </div>
-  <div class="pants">
+ 
+ <div class="pants">
     <div style="color: #4f46e5; border-radius: 50px;">
        <center><a href="{{ url_for('formal_pant') }}">
-       <img src="{{ url_for('static', filename='images/Formal_pant.jpg') }}"></img>
+       <img src="{{ url_for('static', filename='images/Formal_pant.jpg') }}" alt="Formal Pant">
        <h2 style="color: #4f46e5;">Formal Pant</h2></a></center>
     </div>
     <div style="background-color: #4f46e5;color: white; border-radius: 50px;">
        <center><a href="{{ url_for('track_pant') }}">
-       <img src="{{ url_for('static', filename='images/Track_pant.jpg') }}"></img>
+       <img src="{{ url_for('static', filename='images/Track_pant.jpg') }}" alt="Track Pant">
        <h2>Track Pant</h2></a></center>
     </div>
  </div>
+ 
  <div id="contact">
      <div id="call">
        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
@@ -119,7 +140,7 @@
      </div>
      <div id="ll">
        <a href="#home">
-        <img src="{{ url_for('static', filename='images/STATIC_LOGO.png') }}"></img>
+        <img src="{{ url_for('static', filename='images/STATIC_LOGO.png') }}" alt="Looker Logo">
        </a> 
      </div>  
  </div>
